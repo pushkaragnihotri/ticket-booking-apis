@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "734e370b-c5ec-463c-a313-d9cbd72622e5",
+		"name": "convosight",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "/users/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Marcos\",\n    \"lastName\": \"Silva\",\n    \"email\": \"marcos.henrique@toptal.com\",\n    \"password\": \"s3cr3tp4sswo4rd\",\n    \"phoneNumber\": 9999999999\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"marcos.henrique@toptal.com\",\n    \"password\": \"s3cr3tp4sswo4rd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "movies",
+			"item": [
+				{
+					"name": "/movie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"name\": \"Joker\",\n        \"releaseDate\": \"2 October 2019\",\n        \"genre\": \"Drama/Crime\",\n        \"languages\": \"English\",\n        \"duration\": \"2h 2m\"\n    },\n    {\n        \"name\": \"Forrest Gump\",\n        \"releaseDate\": \"23 June 1994\",\n        \"genre\": \"Drama/Comedy-drama\",\n        \"languages\": \"English\",\n        \"duration\": \"2h 22m\"\n    },\n    {\n        \"name\": \"Tamasha\",\n        \"releaseDate\": \"27 November 2015 \",\n        \"genre\": \"DramaRomance/Drama\",\n        \"languages\": \"Hindi\",\n        \"duration\": \"2h 19m\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/movie",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/theatre",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"theatre\": {\n        \"name\": \"INOX Interiorz\",\n        \"address\": \"Crown Interiorz Mall: Sector 35\",\n        \"city\": \"Faridabad\",\n        \"pincode\": 121003\n    },\n    \"screen\": [\n        {\n            \"name\": \"audi1\"\n        },\n        {\n            \"name\": \"audi2\"\n        },\n        {\n            \"name\": \"audi3\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/theatre",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"theatre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/assign",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"theatreId\": \"5ea2c6e304277943dc9f14b4\",\n        \"movieId\": \"5ea2c6e004277943dc9f14b1\",\n        \"screenId\": \"5ea2c6e404277943dc9f14b5\",\n        \"slot\": [\n            {\n                \"startTime\": \"8:00 AM\",\n                \"endTime\": \"10:30 AM\"\n            },\n            {\n                \"startTime\": \"11:00 AM\",\n                \"endTime\": \"1:30 PM\"\n            },\n            {\n                \"startTime\": \"2:30 PM\",\n                \"endTime\": \"5:00 PM\"\n            }\n        ]\n    },\n    {\n        \"theatreId\": \"5ea2c6e304277943dc9f14b4\",\n        \"movieId\": \"5ea2c6e004277943dc9f14b3\",\n        \"screenId\": \"5ea2c6e404277943dc9f14b5\",\n        \"slot\": [\n            {\n                \"startTime\": \"5:30 PM\",\n                \"endTime\": \"8:00 PM\"\n            }\n        ]\n    },\n    {\n        \"theatreId\": \"5ea2c6e304277943dc9f14b4\",\n        \"movieId\": \"5ea2c6e004277943dc9f14b2\",\n        \"screenId\": \"5ea2c6e404277943dc9f14b5\",\n        \"slot\": [\n            {\n                \"startTime\": \"8:30 PM\",\n                \"endTime\": \"11:00 PM\"\n            }\n        ]\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/assign",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"assign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updateslots",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"theatreId\": \"5ea2c6e304277943dc9f14b4\",\n    \"movieId\": \"5ea2c6e004277943dc9f14b1\",\n    \"screenId\": \"5ea2c6e404277943dc9f14b5\",\n    \"slot\": [\n        {\n            \"startTime\": \"8:00 AM\",\n            \"endTime\": \"10:30 AM\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/updateslots",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"updateslots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bookticket",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"theatreId\": \"5ea2c6e304277943dc9f14b4\",\n    \"movieId\": \"5ea2c6e004277943dc9f14b1\",\n    \"screenId\": \"5ea2c6e404277943dc9f14b5\",\n    \"slotId\": 0,\n    \"noOfSeat\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/bookticket",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"bookticket"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bookedseatlist",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"theatreId\": \"5ea2c6e304277943dc9f14b4\",\n    \"movieId\": \"5ea2c6e004277943dc9f14b1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/bookedseatlist",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"bookedseatlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/list/:city",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/list/Faridabad",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"list",
+								"Faridabad"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"variable": [
+		{
+			"id": "2ea623a9-c2e4-416d-b9ef-e315d3260418",
+			"key": "base_url",
+			"value": "http://localhost:3670",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
